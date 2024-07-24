@@ -31,70 +31,19 @@ document.addEventListener('click', function(event) {
 });
     
 document.getElementById("myInput").value = `
-using System;
-class Shape
-{
-    public virtual void Draw()
-    {
-        Console.WriteLine("Drawing a shape");
-    }
-    public virtual void Erase()
-    {
-        Console.WriteLine("Erasing a shape");
-    }
-}
-class Circle : Shape
-{
-    public override void Draw()
-    {
-        Console.WriteLine("Drawing a circle");
-    }
-    public override void Erase()
-    {
-        Console.WriteLine("Erasing a circle");
-    }
-}
-class Triangle : Shape
-{
-    public override void Draw()
-    {
-        Console.WriteLine("Drawing a triangle");
-    }
-
-    public override void Erase()
-    {
-        Console.WriteLine("Erasing a triangle");
-    }
-}
-class Square : Shape
-{
-    public override void Draw()
-    {
-        Console.WriteLine("Drawing a square");
-    }
-
-    public override void Erase()
-    {
-        Console.WriteLine("Erasing a square");
-    }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        
-        Shape[] shapes = new Shape[3];
-        shapes[0] = new Circle();
-        shapes[1] = new Triangle();
-        shapes[2] = new Square();
-        foreach (Shape shape in shapes)
-        {
-            shape.Draw();
-            shape.Erase();
-            Console.WriteLine();
-        }
-    }
-}
+In lab1 folder, write code in views.py
+from django.http import HttpResponse
+import datetime
+def current_datetime(request):
+now = datetime.datetime.now() 
+html = "<html><body><h1>It is now %s.</h1></body></html>" %now
+return HttpResponse(html)
+In the project folder p, write the code into urls.py
+from django.urls import path
+from lab1.views import current_datetime
+urlpatterns = [
+ path('cdt/', current_datetime),
+]
 `
 
 function myFunction() {
